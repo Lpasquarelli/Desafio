@@ -1,0 +1,16 @@
+C:\Users\leona\OneDrive\Área de Trabalho\TestePleno\TestePleno\TestePleno\obj\Debug\net5.0\TestePleno.csprojAssemblyReference.cache
+C:\Users\leona\OneDrive\Área de Trabalho\TestePleno\TestePleno\TestePleno\obj\Debug\net5.0\TestePleno.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leona\OneDrive\Área de Trabalho\TestePleno\TestePleno\TestePleno\obj\Debug\net5.0\TestePleno.AssemblyInfoInputs.cache
+C:\Users\leona\OneDrive\Área de Trabalho\TestePleno\TestePleno\TestePleno\obj\Debug\net5.0\TestePleno.AssemblyInfo.cs
+C:\Users\leona\OneDrive\Área de Trabalho\TestePleno\TestePleno\TestePleno\obj\Debug\net5.0\TestePleno.csproj.CoreCompileInputs.cache
+C:\Users\leona\OneDrive\Área de Trabalho\TestePleno\TestePleno\TestePleno\bin\Debug\net5.0\TestePleno.exe
+C:\Users\leona\OneDrive\Área de Trabalho\TestePleno\TestePleno\TestePleno\bin\Debug\net5.0\TestePleno.deps.json
+C:\Users\leona\OneDrive\Área de Trabalho\TestePleno\TestePleno\TestePleno\bin\Debug\net5.0\TestePleno.runtimeconfig.json
+C:\Users\leona\OneDrive\Área de Trabalho\TestePleno\TestePleno\TestePleno\bin\Debug\net5.0\TestePleno.runtimeconfig.dev.json
+C:\Users\leona\OneDrive\Área de Trabalho\TestePleno\TestePleno\TestePleno\bin\Debug\net5.0\TestePleno.dll
+C:\Users\leona\OneDrive\Área de Trabalho\TestePleno\TestePleno\TestePleno\bin\Debug\net5.0\ref\TestePleno.dll
+C:\Users\leona\OneDrive\Área de Trabalho\TestePleno\TestePleno\TestePleno\bin\Debug\net5.0\TestePleno.pdb
+C:\Users\leona\OneDrive\Área de Trabalho\TestePleno\TestePleno\TestePleno\obj\Debug\net5.0\TestePleno.dll
+C:\Users\leona\OneDrive\Área de Trabalho\TestePleno\TestePleno\TestePleno\obj\Debug\net5.0\ref\TestePleno.dll
+C:\Users\leona\OneDrive\Área de Trabalho\TestePleno\TestePleno\TestePleno\obj\Debug\net5.0\TestePleno.pdb
+C:\Users\leona\OneDrive\Área de Trabalho\TestePleno\TestePleno\TestePleno\obj\Debug\net5.0\TestePleno.genruntimeconfig.cache
