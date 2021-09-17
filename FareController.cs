@@ -23,6 +23,15 @@ namespace TestePleno.Controllers
         {
             var selectedOperator = _operatorService.GetOperatorByCode(operatorCode);
             fare.OperatorId = selectedOperator.Id;
+            fare.DataCadastro = DateTime.Today;
+
+
+            //Teste para se estiver ativa nao deixar passar 
+            //fare.Status = 1;
+            //teste para se estiver ativo porem com mais de 6 meses 
+            //fare.DataCadastro = Convert.ToDateTime("30/12/2020");
+            
+
 
             FareService.Create(fare);
         }

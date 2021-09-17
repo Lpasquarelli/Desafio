@@ -10,7 +10,6 @@ namespace TestePleno.Services
     public class Repository
     {
         private List<IModel> _fakeDatabase = new List<IModel>();
-
         public void Insert(IModel model)
         {
             DateTime _dataToday = DateTime.Today;
@@ -29,20 +28,40 @@ namespace TestePleno.Services
             {
                 //TRAZER TODAS AS TARIFAS CADASTRADAS COM O OPERATORID = model
                 // Uma "Fare" só pode ser cadastrada caso aquela operadora não possua nenhuma tarifa ativa (Fare.Status == 1) de mesmo valor dentro de um período de 6 meses
-                // pegar a assinatura  = operador que tenha id = Operator id de um assinatura = Tarifa
-                Fare fare = (Fare)model;
+                
+               var list = _fakeDatabase.Where(savedModel => savedModel.GetType().IsAssignableFrom(typeof(Fare))).ToList();
+               var convertedModels = list.Select(genericModel => (Fare)genericModel).ToList();
 
-                var objOp = GetById<Operator>(fare.OperatorId);
-                ///pega todas os operadores que tenham ligação com o operador ID
-                var fares = _fakeDatabase.Where(savedModel => savedModel.GetType().IsAssignableFrom(typeof(Operator)) && fare.OperatorId == savedModel.Id).ToList();
-
-                    
-
+                ValidaFare(convertedModels, model);
             }
 
             _fakeDatabase.Add(model);
         }
 
+        public bool ValidaFare(List<Fare> obj, dynamic modelo)
+        {
+            var Operator = GetById<Operator>(modelo.OperatorId);
+            //trazer as fares por operador
+            var FareByOperator = obj.Where(x => x.OperatorId == Operator.Id).ToList();
+
+            if(FareByOperator.Count > 0)
+            {
+                //verificar se existe alguma fare que esta com status 1 
+                var existeAtiva = FareByOperator.Where(x => x.Status == 1).ToList();
+                var ativaValida = existeAtiva.Where(x => (DateTime.Today.Month - x.DataCadastro.Month <= 6)).ToList();
+                if (existeAtiva.Count > 0)
+                {  
+                    if (ativaValida.Count > 0)
+                    {
+                        throw new Exception($"Nao Foi possivel gravar a Tarifa, Esse operador ja posui tarifas ativas com menos de 6 meses");
+                    }
+
+                }
+
+            }
+
+            return true;
+        }
         public void Update(dynamic model)
         {
             var updatingModel = _fakeDatabase.FirstOrDefault(savedModel => savedModel.Id == model.Id);
@@ -58,7 +77,7 @@ namespace TestePleno.Services
             var model = _fakeDatabase.FirstOrDefault(savedModel => savedModel.Id == id);
             return (T) model;
         }
-
+       
         public List<T> GetAll<T>()
         {
             var allModels = _fakeDatabase.Where(savedModel => savedModel.GetType().IsAssignableFrom(typeof(T))).ToList();
